@@ -1,8 +1,9 @@
+
 syntax on
 set nu
 set rnu
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set mouse=n
 imap jj <Esc>
 set guifont=*
@@ -23,7 +24,8 @@ function! Run()
   " Get the full path to the compiled executable
   let executablePath = expand('%:p:h') . '/' . rootName
   " Compile the code and run
-  execute 'w | !g++ -o ' . rootName . ' ' . fileName . ' && ' . executablePath
+  "execute 'w | !g++ -o ' . rootName . ' ' . fileName . ' && ' . executablePath
+   execute 'w | !g++ ' . fileName . ' && a.exe' 
 endfunction
 
 " Map keys to compile and run current file
