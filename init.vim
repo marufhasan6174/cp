@@ -1,4 +1,3 @@
-
 syntax on
 set nu
 set rnu
@@ -29,4 +28,28 @@ function! Run()
 endfunction
 
 " Map keys to compile and run current file
-map <Leader><Space> :call Run()<CR>
+map <Leader><space> :call Run()<CR>
+
+function! In1()
+  let fileName = expand('%')
+  let rootName = substitute(fileName, '\.[^.]*$', '', '')
+  let executablePath = expand('%:p:h') . '/' . rootName
+   execute 'w | !g++ ' . fileName . ' && a.exe <in1' 
+endfunction
+nnoremap <C-q> :call In1()<CR>
+
+function! In2()
+  let fileName = expand('%')
+  let rootName = substitute(fileName, '\.[^.]*$', '', '')
+  let executablePath = expand('%:p:h') . '/' . rootName
+   execute 'w | !g++ ' . fileName . ' && a.exe <in2' 
+endfunction
+nnoremap <C-w> :call In2()<CR>
+
+function! In3()
+  let fileName = expand('%')
+  let rootName = substitute(fileName, '\.[^.]*$', '', '')
+  let executablePath = expand('%:p:h') . '/' . rootName
+   execute 'w | !g++ ' . fileName . ' && a.exe <in3' 
+endfunction
+nnoremap <C-e> :call In3()<CR>
