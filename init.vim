@@ -34,7 +34,7 @@ function! In1()
   let fileName = expand('%')
   let rootName = substitute(fileName, '\.[^.]*$', '', '')
   let executablePath = expand('%:p:h') . '/' . rootName
-   execute 'w | !g++ ' . fileName . ' && a.exe <in1' 
+   execute 'w | !g++ ' . fileName . ' && a.exe <in1.txt' 
 endfunction
 nnoremap <C-q> :call In1()<CR>
 
@@ -42,7 +42,7 @@ function! In2()
   let fileName = expand('%')
   let rootName = substitute(fileName, '\.[^.]*$', '', '')
   let executablePath = expand('%:p:h') . '/' . rootName
-   execute 'w | !g++ ' . fileName . ' && a.exe <in2' 
+   execute 'w | !g++ ' . fileName . ' && a.exe <in2.txt' 
 endfunction
 nnoremap <C-w> :call In2()<CR>
 
@@ -50,6 +50,6 @@ function! In3()
   let fileName = expand('%')
   let rootName = substitute(fileName, '\.[^.]*$', '', '')
   let executablePath = expand('%:p:h') . '/' . rootName
-   execute 'w | !g++ ' . fileName . ' && a.exe <in3' 
+   execute 'w | !g++ ' . fileName . ' && a.exe <in3.txt' 
 endfunction
 nnoremap <C-e> :call In3()<CR>
